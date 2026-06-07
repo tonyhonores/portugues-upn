@@ -1,0 +1,391 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); }
+  .mb-hero {
+    background: #FFD600;
+    padding: 32px 28px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .mb-hero-shapes {
+    position: absolute; inset: 0; pointer-events: none;
+  }
+  .mb-shape {
+    position: absolute; border-radius: 50%; background: #FF6D00; opacity: .15;
+  }
+  .mb-s1 { width: 260px; height: 260px; top: -80px; right: -60px; }
+  .mb-s2 { width: 140px; height: 140px; bottom: -40px; left: 20px; background: #0D0D0D; opacity: .07; }
+  .mb-hero-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; position: relative; z-index: 1; }
+  .mb-badge {
+    display: inline-block; background: #0D0D0D; color: #FFD600;
+    font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 99px; margin-bottom: 10px;
+  }
+  .mb-title { font-size: 28px; font-weight: 500; line-height: 1.05; color: #0D0D0D; margin-bottom: 6px; }
+  .mb-title .acc { color: #FF6D00; }
+  .mb-sub { font-size: 10px; font-weight: 700; color: #333; margin-bottom: 10px; }
+  .mb-benefits { list-style: none; margin-bottom: 14px; }
+  .mb-benefits li { font-size: 9.5px; font-weight: 700; color: #0D0D0D; padding: 2px 0; }
+  .mb-ctas { display: flex; gap: 8px; }
+  .mb-btn-p {
+    background: #FF6D00; color: #fff; font-size: 9px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .06em; padding: 7px 14px;
+    border-radius: 6px; border: none; cursor: pointer;
+  }
+  .mb-btn-o {
+    background: transparent; color: #0D0D0D; font-size: 9px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .06em; padding: 7px 14px;
+    border-radius: 6px; border: 2px solid #0D0D0D; cursor: pointer;
+  }
+  .mb-logo-box {
+    background: #0D0D0D; color: #fff; padding: 14px 20px; border-radius: 10px;
+    text-align: center; box-shadow: 4px 4px 0 #FF6D00; flex-shrink: 0;
+  }
+  .mb-logo-brand { display: block; font-size: 22px; font-weight: 500; color: #FFD600; letter-spacing: .04em; }
+  .mb-logo-tag { display: block; font-size: 7px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #888; margin-top: 2px; }
+  .mb-logo-url { font-size: 8px; color: #666; font-weight: 700; margin-top: 6px; text-align: center; }
+
+  /* PRODUTOS */
+  .mb-produtos { background: #F5F5F5; padding: 28px; }
+  .mb-sec-title { font-size: 20px; font-weight: 500; text-align: center; margin-bottom: 22px; color: var(--color-text-primary); }
+  .mb-sec-title span { color: #FF6D00; }
+  .mb-cat { margin-bottom: 22px; }
+  .mb-cat-header { display: flex; align-items: center; gap: 8px; border-bottom: 3px solid #FFD600; padding-bottom: 6px; margin-bottom: 12px; }
+  .mb-cat-icon { font-size: 16px; }
+  .mb-cat-name { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; color: var(--color-text-primary); }
+  .mb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .mb-card {
+    background: var(--color-background-primary);
+    border-radius: 10px; overflow: hidden; position: relative;
+    border: 0.5px solid var(--color-border-tertiary);
+  }
+  .mb-card-badge {
+    position: absolute; top: 6px; right: 6px;
+    background: #FF1744; color: #fff; font-size: 7px; font-weight: 700;
+    letter-spacing: .08em; padding: 2px 7px; border-radius: 99px; text-transform: uppercase;
+  }
+  .mb-card-emoji {
+    text-align: center; font-size: 28px; padding: 14px 10px 6px;
+    background: linear-gradient(135deg, #FFF9C4 0%, #FFE082 100%);
+  }
+  .mb-card-body { padding: 10px 10px 6px; }
+  .mb-card-name { font-size: 10px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 2px; }
+  .mb-card-detail { font-size: 8.5px; color: var(--color-text-secondary); margin-bottom: 8px; }
+  .mb-card-price-old { font-size: 8px; color: var(--color-text-secondary); text-decoration: line-through; }
+  .mb-card-price { font-size: 13px; font-weight: 500; color: #FF6D00; }
+  .mb-card-btn {
+    display: block; text-align: center; background: #0D0D0D; color: #FFD600;
+    font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+    padding: 7px; margin-top: 6px;
+  }
+
+  /* OFERTA */
+  .mb-oferta { background: #0D0D0D; padding: 26px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .mb-oferta-kicker { font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #FFD600; margin-bottom: 8px; }
+  .mb-oferta-title { font-size: 16px; font-weight: 500; color: #fff; line-height: 1.2; margin-bottom: 8px; }
+  .mb-oferta-desc { font-size: 9.5px; color: #999; margin-bottom: 14px; }
+  .mb-oferta-desc strong { color: #FFD600; }
+  .mb-oferta-badge {
+    width: 72px; height: 72px; border-radius: 50%; background: #FFD600;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .mb-oferta-badge span { font-size: 18px; font-weight: 500; color: #0D0D0D; line-height: 1; }
+  .mb-oferta-badge small { font-size: 7px; font-weight: 700; letter-spacing: .1em; color: #0D0D0D; text-transform: uppercase; }
+
+  /* CONTATO */
+  .mb-contato { padding: 28px; background: var(--color-background-primary); text-align: center; }
+  .mb-contato-sub { font-size: 10px; color: var(--color-text-secondary); margin-bottom: 16px; }
+  .mb-info-cards { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  .mb-info-card {
+    display: flex; align-items: flex-start; gap: 8px;
+    background: #F5F5F5; border-radius: 10px; padding: 12px 14px; text-align: left;
+  }
+  .mb-info-card-icon { font-size: 16px; }
+  .mb-info-label { display: block; font-size: 7.5px; text-transform: uppercase; letter-spacing: .1em; color: var(--color-text-secondary); margin-bottom: 2px; }
+  .mb-info-value { font-size: 9.5px; font-weight: 500; color: var(--color-text-primary); }
+  .mb-btn-wa {
+    background: #25D366; color: #fff; font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .06em; padding: 10px 24px;
+    border-radius: 8px; border: none; cursor: pointer;
+  }
+
+  /* FOOTER */
+  .mb-footer { background: #0D0D0D; padding: 18px 28px; text-align: center; }
+  .mb-footer-brand { font-size: 18px; font-weight: 500; color: #FFD600; letter-spacing: .06em; margin-bottom: 4px; }
+  .mb-footer-copy { font-size: 8.5px; color: #666; margin-bottom: 2px; }
+  .mb-footer-url { font-size: 8px; color: #444; }
+
+  /* NAV BAR (mockup top bar) */
+  .mb-nav {
+    background: var(--color-background-primary);
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+    padding: 10px 28px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .mb-nav-brand { font-size: 14px; font-weight: 500; color: var(--color-text-primary); }
+  .mb-nav-brand span { color: #FF6D00; }
+  .mb-nav-links { display: flex; gap: 16px; }
+  .mb-nav-link { font-size: 9.5px; color: var(--color-text-secondary); font-weight: 500; }
+  .mb-nav-link.active { color: #FF6D00; }
+  .mb-nav-cta {
+    background: #FF6D00; color: #fff; font-size: 9px; font-weight: 700;
+    padding: 5px 12px; border-radius: 6px; border: none;
+  }
+
+  /* browser chrome */
+  .browser { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; background: var(--color-background-primary); }
+  .browser-bar {
+    background: var(--color-background-secondary); padding: 8px 12px;
+    display: flex; align-items: center; gap: 8px;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .d-r { background: #FF5F57; }
+  .d-y { background: #FFBD2E; }
+  .d-g { background: #28C840; }
+  .url-bar {
+    flex: 1; background: var(--color-background-primary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: 6px; padding: 3px 10px; font-size: 9px; color: var(--color-text-secondary);
+  }
+</style>
+
+<h2 class="sr-only">Mockup da landing page ModaBrasil — loja de roupas em PHP com hero amarelo, grid de produtos e seção de contato</h2>
+
+<div style="padding: 1rem 0;">
+
+<div class="browser">
+  <div class="browser-bar">
+    <div class="dot d-r"></div>
+    <div class="dot d-y"></div>
+    <div class="dot d-g"></div>
+    <div class="url-bar">www.modabrasil.com.br</div>
+  </div>
+
+  <!-- NAV -->
+  <div class="mb-nav">
+    <div class="mb-nav-brand">Moda<span>Brasil</span></div>
+    <div class="mb-nav-links">
+      <span class="mb-nav-link active">Início</span>
+      <span class="mb-nav-link">Produtos</span>
+      <span class="mb-nav-link">Ofertas</span>
+      <span class="mb-nav-link">Contato</span>
+    </div>
+    <button class="mb-nav-cta">WhatsApp</button>
+  </div>
+
+  <!-- HERO -->
+  <div class="mb-hero">
+    <div class="mb-hero-shapes">
+      <div class="mb-shape mb-s1"></div>
+      <div class="mb-shape mb-s2"></div>
+    </div>
+    <div class="mb-hero-inner">
+      <div>
+        <span class="mb-badge">✦ Nova Coleção 2025 ✦</span>
+        <div class="mb-title">
+          Venha Agora<br>
+          <span class="acc">Para a Melhor</span><br>
+          Loja de Moda!
+        </div>
+        <p class="mb-sub">Estilo, qualidade e preço justo para você!</p>
+        <ul class="mb-benefits">
+          <li>✔ Renove seu guarda-roupa!</li>
+          <li>✔ Aproveite nossas ofertas especiais!</li>
+          <li>✔ Compre hoje e economize muito!</li>
+        </ul>
+        <div class="mb-ctas">
+          <button class="mb-btn-p">Ver Produtos</button>
+          <button class="mb-btn-o">Fale Conosco</button>
+        </div>
+      </div>
+      <div>
+        <div class="mb-logo-box">
+          <span class="mb-logo-brand">ModaBrasil</span>
+          <span class="mb-logo-tag">Moda &amp; Estilo Para Você!</span>
+        </div>
+        <div class="mb-logo-url">www.modabrasil.com.br</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUTOS -->
+  <div class="mb-produtos">
+    <div class="mb-sec-title">Nossos <span>Produtos</span></div>
+
+    <!-- Categoria 1 -->
+    <div class="mb-cat">
+      <div class="mb-cat-header">
+        <span class="mb-cat-icon">👔</span>
+        <span class="mb-cat-name">Roupas Casuais</span>
+      </div>
+      <div class="mb-grid">
+        <div class="mb-card">
+          <div class="mb-card-badge">OFERTA</div>
+          <div class="mb-card-emoji">👔</div>
+          <div class="mb-card-body">
+            <div class="mb-card-name">Camisas Sociais</div>
+            <div class="mb-card-detail">100% algodão, várias cores</div>
+            <div class="mb-card-price-old">R$ 119,90</div>
+            <div class="mb-card-price">R$ 89,90</div>
+          </div>
+          <div class="mb-card-btn">Comprar Agora</div>
+        </div>
+        <div class="mb-card">
+          <div class="mb-card-emoji">🎽</div>
+          <div class="mb-card-body">
+            <div class="mb-card-name">Polos Masculinas</div>
+            <div class="mb-card-detail">Dry-fit, confortável e elegante</div>
+            <div class="mb-card-price">R$ 69,90</div>
+          </div>
+          <div class="mb-card-btn">Comprar Agora</div>
+        </div>
+        <div class="mb-card">
+          <div class="mb-card-badge">NOVO</div>
+          <div class="mb-card-emoji">🧥</div>
+          <div class="mb-card-body">
+            <div class="mb-card-name">Poleras / Hoodies</div>
+            <div class="mb-card-detail">Fleece premium, unissex</div>
+            <div class="mb-card-price-old">R$ 159,90</div>
+            <div class="mb-card-price">R$ 129,90</div>
+          </div>
+          <div class="mb-card-btn">Comprar Agora</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categoria 2 -->
+    <div class="mb-cat">
+      <div class="mb-cat-header">
+        <span class="mb-cat-icon">👖</span>
+        <span class="mb-cat-name">Calças &amp; Bermudas</span>
+      </div>
+      <div class="mb-grid">
+        <div class="mb-card">
+          <div class="mb-card-badge">OFERTA</div>
+          <div class="mb-card-emoji">👖</div>
+          <div class="mb-card-body">
+            <div class="mb-card-name">Calças Jeans</div>
+            <div class="mb-card-detail">Denim resistente, corte slim</div>
+            <div class="mb-card-price-old">R$ 189,90</div>
+            <div class="mb-card-price">R$ 149,90</div>
+          </div>
+          <div class="mb-card-btn">Comprar Agora</div>
+        </div>
+        <div class="mb-card">
+          <div class="mb-card-emoji">🩲</div>
+          <div class="mb-card-body">
+            <div class="mb-card-name">Calças de Linho</div>
+            <div class="mb-card-detail">Leve e elegante para o verão</div>
+            <div class="mb-card-price">R$ 119,90</div>
+          </div>
+          <div class="mb-card-btn">Comprar Agora</div>
+        </div>
+        <div class="mb-card">
+          <div class="mb-card-emoji">🩳</div>
+          <div class="mb-card-body">
+            <div class="mb-card-name">Bermudas Casuais</div>
+            <div class="mb-card-detail">Algodão, perfeitas para o dia a dia</div>
+            <div class="mb-card-price-old">R$ 79,90</div>
+            <div class="mb-card-price">R$ 59,90</div>
+          </div>
+          <div class="mb-card-btn">Comprar Agora</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categoria 3 -->
+    <div class="mb-cat">
+      <div class="mb-cat-header">
+        <span class="mb-cat-icon">🧦</span>
+        <span class="mb-cat-name">Meias &amp; Acessórios</span>
+      </div>
+      <div class="mb-grid">
+        <div class="mb-card">
+          <div class="mb-card-badge">KIT</div>
+          <div class="mb-card-emoji">🧦</div>
+          <div class="mb-card-body">
+            <div class="mb-card-name">Meias Cano Curto</div>
+            <div class="mb-card-detail">Kit 6 pares – algodão antifungo</div>
+            <div class="mb-card-price-old">R$ 49,90</div>
+            <div class="mb-card-price">R$ 34,90</div>
+          </div>
+          <div class="mb-card-btn">Comprar Agora</div>
+        </div>
+        <div class="mb-card">
+          <div class="mb-card-emoji">🎽</div>
+          <div class="mb-card-body">
+            <div class="mb-card-name">Meias Esportivas</div>
+            <div class="mb-card-detail">Compressão e amortecimento</div>
+            <div class="mb-card-price">R$ 44,90</div>
+          </div>
+          <div class="mb-card-btn">Comprar Agora</div>
+        </div>
+        <div class="mb-card">
+          <div class="mb-card-badge">NOVO</div>
+          <div class="mb-card-emoji">🎨</div>
+          <div class="mb-card-body">
+            <div class="mb-card-name">Meias Cano Alto</div>
+            <div class="mb-card-detail">Estampas exclusivas ModaBrasil</div>
+            <div class="mb-card-price">R$ 39,90</div>
+          </div>
+          <div class="mb-card-btn">Comprar Agora</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFERTA ESPECIAL -->
+  <div class="mb-oferta">
+    <div>
+      <div class="mb-oferta-kicker">⚡ Oferta Especial</div>
+      <div class="mb-oferta-title">Experimente! Sinta a qualidade.<br>Leve para casa hoje mesmo!</div>
+      <div class="mb-oferta-desc">Compre qualquer 3 peças e ganhe <strong>10% de desconto</strong>.</div>
+      <button class="mb-btn-p">Aproveitar Oferta</button>
+    </div>
+    <div class="mb-oferta-badge">
+      <span>10%</span>
+      <small>Desconto</small>
+    </div>
+  </div>
+
+  <!-- CONTATO -->
+  <div class="mb-contato">
+    <div class="mb-sec-title">Fale <span>Conosco</span></div>
+    <p class="mb-contato-sub">Visite-nos ou entre em contato pelo WhatsApp!</p>
+    <div class="mb-info-cards">
+      <div class="mb-info-card">
+        <span class="mb-info-card-icon">📍</span>
+        <div>
+          <span class="mb-info-label">Endereço</span>
+          <div class="mb-info-value">Rua das Flores, 247 – Centro, SP</div>
+        </div>
+      </div>
+      <div class="mb-info-card">
+        <span class="mb-info-card-icon">📱</span>
+        <div>
+          <span class="mb-info-label">WhatsApp</span>
+          <div class="mb-info-value">(11) 98765-4321</div>
+        </div>
+      </div>
+      <div class="mb-info-card">
+        <span class="mb-info-card-icon">🕐</span>
+        <div>
+          <span class="mb-info-label">Horário</span>
+          <div class="mb-info-value">Seg–Sex 9h–19h · Sáb 9h–17h</div>
+        </div>
+      </div>
+    </div>
+    <button class="mb-btn-wa">💬 Chamar no WhatsApp</button>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="mb-footer">
+    <div class="mb-footer-brand">ModaBrasil</div>
+    <div class="mb-footer-copy">© 2025 ModaBrasil. Todos os direitos reservados.</div>
+    <div class="mb-footer-url">www.modabrasil.com.br</div>
+  </div>
+
+</div>
+</div>

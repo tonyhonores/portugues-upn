@@ -1,0 +1,26 @@
+{
+    "folders": [
+        { "path": "." }
+    ],
+    "settings": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4,
+        "files.associations": {
+            "*.php": "php"
+        },
+        "emmet.includeLanguages": {
+            "php": "html"
+        },
+        "php.validate.enable": true,
+        "liveServer.settings.port": 5500
+    },
+    "extensions": {
+        "recommendations": [
+            "bmewburn.vscode-intelephense-client",
+            "ritwickdey.LiveServer",
+            "ecmel.vscode-html-css",
+            "formulahendry.auto-close-tag",
+            "esbenp.prettier-vscode"
+        ]
+    }
+}
