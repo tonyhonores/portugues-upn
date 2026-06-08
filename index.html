@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModaBrasil – Moda &amp; Estilo Para Você!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- HERO BANNER -->
+<header class="hero">
+    <div class="hero__bg-shapes">
+        <span class="shape shape--1"></span>
+        <span class="shape shape--2"></span>
+        <span class="shape shape--3"></span>
+    </div>
+
+    <div class="container hero__inner">
+        <div class="hero__text">
+            <p class="hero__badge">✦ Nova Coleção 2026 ✦</p>
+            <h1 class="hero__title">
+                <span class="line">Venha Agora</span>
+                <span class="line accent">Para a Melhor</span>
+                <span class="line">Loja de Moda!</span>
+            </h1>
+            <p class="hero__sub">Estilo, qualidade e preço justo para você!</p>
+            <ul class="hero__benefits">
+                <li>✔ Renove seu guarda-roupa!</li>
+                <li>✔ Aproveite nossas ofertas especiais!</li>
+                <li>✔ Compre hoje e economize muito!</li>
+            </ul>
+            <div class="hero__ctas">
+                <a href="#produtos" class="btn btn--primary">Ver Produtos</a>
+                <a href="#contato" class="btn btn--outline">Fale Conosco</a>
+                <button type="button" class="btn btn--secondary" onclick="window.print()">Imprimir Diseño</button>
+            </div>
+        </div>
+        <div class="hero__logo-block">
+            <div class="logo-box">
+                <span class="logo-brand">ModaBrasil</span>
+                <span class="logo-tag">Moda &amp; Estilo Para Você!</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- PRODUTOS -->
+<section class="produtos" id="produtos">
+    <div class="container">
+        <h2 class="section-title">
+            <span>Nossos</span> Produtos
+        </h2>
+
+        <!-- Roupas Casuais -->
+        <div class="categoria">
+            <div class="categoria__header">
+                <span class="categoria__icon">👔</span>
+                <h3 class="categoria__nome">Roupas Casuais</h3>
+            </div>
+            <div class="produtos__grid">
+
+                <div class="card" data-product="Camisas Sociais">
+                    <div class="card__badge">OFERTA</div>
+                    <div class="card__gallery" onclick="openModal(event, 'Camisas Sociais')">
+                        <img class="card__image card__image--active" src="assets/images/Camisas Sociais.jpg" alt="Camisas Sociais" loading="lazy">
+                        <img class="card__image" src="assets/images/Camisas Sociais1.jpg" alt="Camisas Sociais" loading="lazy">
+                        <img class="card__image" src="assets/images/Camisas Sociais2.jpg" alt="Camisas Sociais" loading="lazy">
+                        <div class="card__gallery-indicator">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <h4 class="card__nome">Camisas Sociais</h4>
+                        <p class="card__detalhe">100% algodão, várias cores</p>
+                        <div class="card__preco">
+                            <s class="card__preco--old">R$ 119,90</s>
+                            <strong class="card__preco--atual">R$ 89,90</strong>
+                        </div>
+                    </div>
+                    <a href="#contato" class="card__btn">Comprar Agora</a>
+                </div>
+
+                <div class="card" data-product="Polos Masculinas">
+                    <div class="card__badge"></div>
+                    <div class="card__gallery" onclick="openModal(event, 'Polos Masculinas')">
+                        <img class="card__image card__image--active" src="assets/images/Polos Masculinas.jpg" alt="Polos Masculinas" loading="lazy">
+                        <img class="card__image" src="assets/images/Polos Masculinas2.jpg" alt="Polos Masculinas" loading="lazy">
+                        <img class="card__image" src="assets/images/Polos Masculinas3.jpg" alt="Polos Masculinas" loading="lazy">
+                        <div class="card__gallery-indicator">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <h4 class="card__nome">Polos Masculinas</h4>
+                        <p class="card__detalhe">Dry-fit, confortável e elegante</p>
+                        <div class="card__preco">
+                            <strong class="card__preco--atual">R$ 69,90</strong>
+                        </div>
+                    </div>
+                    <a href="#contato" class="card__btn">Comprar Agora</a>
+                </div>
+
+                <div class="card" data-product="Poleras / Hoodies">
+                    <div class="card__badge">NOVO</div>
+                    <div class="card__gallery" onclick="openModal(event, 'Poleras / Hoodies')">
+                        <img class="card__image card__image--active" src="assets/images/PolerasHoodies.jpg" alt="Poleras / Hoodies" loading="lazy">
+                        <img class="card__image" src="assets/images/PolerasHoodies2.jpg" alt="Poleras / Hoodies" loading="lazy">
+                        <img class="card__image" src="assets/images/PolerasHoodies3.jpg" alt="Poleras / Hoodies" loading="lazy">
+                        <div class="card__gallery-indicator">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <h4 class="card__nome">Poleras / Hoodies</h4>
+                        <p class="card__detalhe">Fleece premium, unissex</p>
+                        <div class="card__preco">
+                            <s class="card__preco--old">R$ 159,90</s>
+                            <strong class="card__preco--atual">R$ 129,90</strong>
+                        </div>
+                    </div>
+                    <a href="#contato" class="card__btn">Comprar Agora</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Calças & Bermudas -->
+        <div class="categoria">
+            <div class="categoria__header">
+                <span class="categoria__icon">👖</span>
+                <h3 class="categoria__nome">Calças &amp; Bermudas</h3>
+            </div>
+            <div class="produtos__grid">
+
+                <div class="card" data-product="Calças Jeans">
+                    <div class="card__badge">OFERTA</div>
+                    <div class="card__gallery" onclick="openModal(event, 'Calças Jeans')">
+                        <img class="card__image card__image--active" src="assets/images/Calças Jeans.jpg" alt="Calças Jeans" loading="lazy">
+                        <img class="card__image" src="assets/images/Calças Jeans1.jpg" alt="Calças Jeans" loading="lazy">
+                        <img class="card__image" src="assets/images/Calças Jeans2.jpg" alt="Calças Jeans" loading="lazy">
+                        <div class="card__gallery-indicator">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <h4 class="card__nome">Calças Jeans</h4>
+                        <p class="card__detalhe">Denim resistente, corte slim</p>
+                        <div class="card__preco">
+                            <s class="card__preco--old">R$ 189,90</s>
+                            <strong class="card__preco--atual">R$ 149,90</strong>
+                        </div>
+                    </div>
+                    <a href="#contato" class="card__btn">Comprar Agora</a>
+                </div>
+
+                <div class="card" data-product="Calças de Linho">
+                    <div class="card__badge"></div>
+                    <div class="card__gallery" onclick="openModal(event, 'Calças de Linho')">
+                        <img class="card__image card__image--active" src="assets/images/Calças de Linho.jpeg" alt="Calças de Linho" loading="lazy">
+                        <img class="card__image" src="assets/images/Calças de Linho1.jpg" alt="Calças de Linho" loading="lazy">
+                        <img class="card__image" src="assets/images/Calças de Linho2.jpg" alt="Calças de Linho" loading="lazy">
+                        <div class="card__gallery-indicator">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <h4 class="card__nome">Calças de Linho</h4>
+                        <p class="card__detalhe">Leve e elegante para o verão</p>
+                        <div class="card__preco">
+                            <strong class="card__preco--atual">R$ 119,90</strong>
+                        </div>
+                    </div>
+                    <a href="#contato" class="card__btn">Comprar Agora</a>
+                </div>
+
+                <div class="card" data-product="Bermudas Casuais">
+                    <div class="card__badge"></div>
+                    <div class="card__gallery" onclick="openModal(event, 'Bermudas Casuais')">
+                        <img class="card__image card__image--active" src="assets/images/Bermudas Casuais.webp" alt="Bermudas Casuais" loading="lazy">
+                        <img class="card__image" src="assets/images/Bermudas Casuais1.jpg" alt="Bermudas Casuais" loading="lazy">
+                        <img class="card__image" src="assets/images/Bermudas Casuais2.webp" alt="Bermudas Casuais" loading="lazy">
+                        <div class="card__gallery-indicator">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <h4 class="card__nome">Bermudas Casuais</h4>
+                        <p class="card__detalhe">Algodão, perfeitas para o dia a dia</p>
+                        <div class="card__preco">
+                            <s class="card__preco--old">R$ 79,90</s>
+                            <strong class="card__preco--atual">R$ 59,90</strong>
+                        </div>
+                    </div>
+                    <a href="#contato" class="card__btn">Comprar Agora</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Meias & Acessórios -->
+        <div class="categoria">
+            <div class="categoria__header">
+                <span class="categoria__icon">🧦</span>
+                <h3 class="categoria__nome">Meias &amp; Acessórios</h3>
+            </div>
+            <div class="produtos__grid">
+
+                <div class="card" data-product="Meias Cano Curto">
+                    <div class="card__badge">KIT</div>
+                    <div class="card__gallery" onclick="openModal(event, 'Meias Cano Curto')">
+                        <img class="card__image card__image--active" src="assets/images/Meias Cano Curto.jpg" alt="Meias Cano Curto" loading="lazy">
+                        <img class="card__image" src="assets/images/Meias Cano Curto1.png" alt="Meias Cano Curto" loading="lazy">
+                        <img class="card__image" src="assets/images/Meias Cano Curto2.webp" alt="Meias Cano Curto" loading="lazy">
+                        <div class="card__gallery-indicator">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <h4 class="card__nome">Meias Cano Curto</h4>
+                        <p class="card__detalhe">Kit 6 pares – algodão antifungo</p>
+                        <div class="card__preco">
+                            <s class="card__preco--old">R$ 49,90</s>
+                            <strong class="card__preco--atual">R$ 34,90</strong>
+                        </div>
+                    </div>
+                    <a href="#contato" class="card__btn">Comprar Agora</a>
+                </div>
+
+                <div class="card" data-product="Meias Esportivas">
+                    <div class="card__badge"></div>
+                    <div class="card__gallery" onclick="openModal(event, 'Meias Esportivas')">
+                        <img class="card__image card__image--active" src="assets/images/Meias Esportivas.jpg" alt="Meias Esportivas" loading="lazy">
+                        <img class="card__image" src="assets/images/Meias Esportivas.webp" alt="Meias Esportivas" loading="lazy">
+                        <img class="card__image" src="assets/images/Meias Esportivas1.webp" alt="Meias Esportivas" loading="lazy">
+                        <div class="card__gallery-indicator">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <h4 class="card__nome">Meias Esportivas</h4>
+                        <p class="card__detalhe">Compressão e amortecimento</p>
+                        <div class="card__preco">
+                            <strong class="card__preco--atual">R$ 44,90</strong>
+                        </div>
+                    </div>
+                    <a href="#contato" class="card__btn">Comprar Agora</a>
+                </div>
+
+                <div class="card" data-product="Meias Cano Alto">
+                    <div class="card__badge">NOVO</div>
+                    <div class="card__gallery" onclick="openModal(event, 'Meias Cano Alto')">
+                        <img class="card__image card__image--active" src="assets/images/Meias Cano Alto.webp" alt="Meias Cano Alto" loading="lazy">
+                        <img class="card__image" src="assets/images/Meias Cano Alto1.jpg" alt="Meias Cano Alto" loading="lazy">
+                        <img class="card__image" src="assets/images/Meias Cano Alto2.webp" alt="Meias Cano Alto" loading="lazy">
+                        <div class="card__gallery-indicator">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <h4 class="card__nome">Meias Cano Alto</h4>
+                        <p class="card__detalhe">Estampas exclusivas ModaBrasil</p>
+                        <div class="card__preco">
+                            <strong class="card__preco--atual">R$ 39,90</strong>
+                        </div>
+                    </div>
+                    <a href="#contato" class="card__btn">Comprar Agora</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bolsas & Mochilas -->
+        <div class="categoria">
+            <div class="categoria__header">
+                <span class="categoria__icon">🎒</span>
+                <h3 class="categoria__nome">Bolsas &amp; Mochilas</h3>
+            </div>
+            <div class="produtos__grid">
+
+                <div class="card" data-product="Mochila de Viagem">
+                    <div class="card__badge">BEST SELLER</div>
+                    <div class="card__gallery" onclick="openModal(event, 'Mochila de Viagem')">
+                        <img class="card__image card__image--active" src="assets/images/Mochila de Viagem.webp" alt="Mochila de Viagem" loading="lazy">
+                        <img class="card__image" src="assets/images/Mochila de Viagem1.WEBP" alt="Mochila de Viagem" loading="lazy">
+                        <img class="card__image" src="assets/images/Mochila de Viagem2.jpg" alt="Mochila de Viagem" loading="lazy">
+                        <div class="card__gallery-indicator">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <h4 class="card__nome">Mochila de Viagem</h4>
+                        <p class="card__detalhe">Capacidade 40L, compartimentos modulares</p>
+                        <div class="card__preco">
+                            <s class="card__preco--old">R$ 239,90</s>
+                            <strong class="card__preco--atual">R$ 189,90</strong>
+                        </div>
+                    </div>
+                    <a href="#contato" class="card__btn">Comprar Agora</a>
+                </div>
+
+                <div class="card" data-product="Bolsa Executiva">
+                    <div class="card__badge"></div>
+                    <div class="card__gallery" onclick="openModal(event, 'Bolsa Executiva')">
+                        <img class="card__image card__image--active" src="assets/images/Bolsa Executiva.jpg" alt="Bolsa Executiva" loading="lazy">
+                        <img class="card__image" src="assets/images/Bolsa Executiva1.jpg" alt="Bolsa Executiva" loading="lazy">
+                        <img class="card__image" src="assets/images/Bolsa Executiva2.jpg" alt="Bolsa Executiva" loading="lazy">
+                        <div class="card__gallery-indicator">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <h4 class="card__nome">Bolsa Executiva</h4>
+                        <p class="card__detalhe">Couro sintético premium, estilo profissional</p>
+                        <div class="card__preco">
+                            <strong class="card__preco--atual">R$ 149,90</strong>
+                        </div>
+                    </div>
+                    <a href="#contato" class="card__btn">Comprar Agora</a>
+                </div>
+
+                <div class="card" data-product="Mochila Casual">
+                    <div class="card__badge">OFERTA</div>
+                    <div class="card__gallery" onclick="openModal(event, 'Mochila Casual')">
+                        <img class="card__image card__image--active" src="assets/images/Mochila Casual.webp" alt="Mochila Casual" loading="lazy">
+                        <img class="card__image" src="assets/images/Mochila Casual1.jpg" alt="Mochila Casual" loading="lazy">
+                        <img class="card__image" src="assets/images/Mochila Casual2.webp" alt="Mochila Casual" loading="lazy">
+                        <div class="card__gallery-indicator">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <h4 class="card__nome">Mochila Casual</h4>
+                        <p class="card__detalhe">Confortável e funcional para o dia a dia</p>
+                        <div class="card__preco">
+                            <s class="card__preco--old">R$ 129,90</s>
+                            <strong class="card__preco--atual">R$ 99,90</strong>
+                        </div>
+                    </div>
+                    <a href="#contato" class="card__btn">Comprar Agora</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- OFERTA ESPECIAL -->
+<section class="oferta">
+    <div class="container oferta__inner">
+        <div class="oferta__text">
+            <p class="oferta__kicker">⚡ Oferta Especial</p>
+            <h2 class="oferta__titulo">Experimente! Sinta a qualidade.<br>Leve para casa hoje mesmo!</h2>
+            <p class="oferta__desc">Compre qualquer 3 peças e ganhe <strong>10% de desconto</strong> na sua compra.</p>
+            <a href="#contato" class="btn btn--primary">Aproveitar Oferta</a>
+        </div>
+        <div class="oferta__badge-wrap">
+            <div class="oferta__badge">
+                <span>10%</span>
+                <small>DESCONTO</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+    <div class="container contato__inner">
+        <h2 class="section-title">Fale <span>Conosco</span></h2>
+        <p class="contato__sub">Visite-nos ou entre em contato pelo WhatsApp!</p>
+        <div class="contato__cards">
+            <div class="info-card">
+                <span>📍</span>
+                <div>
+                    <strong>Endereço</strong>
+                    <p>Jr San Pablo 268 - Cajamarca</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <span>📱</span>
+                <div>
+                    <strong>WhatsApp</strong>
+                    <p>989109290</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <span>🕐</span>
+                <div>
+                    <strong>Horário</strong>
+                    <p>Segunda, Terça, Quarta, Quinta, Sexta e Sábado 9h–21h · Domingo: não há atendimento</p>
+                </div>
+            </div>
+        </div>
+        <a href="https://wa.me/51989109290" class="btn btn--whatsapp" target="_blank">
+            💬 Chamar no WhatsApp
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer__inner">
+        <p class="footer__brand">ModaBrasil</p>
+        <p class="footer__copy">© 2026 ModaBrasil. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<!-- MODAL DE GALERIA -->
+<div id="galleryModal" class="modal">
+    <div class="modal__content">
+        <span class="modal__close" onclick="closeModal()">&times;</span>
+        <div class="modal__gallery">
+            <img id="modalImage" src="" alt="Imagem do produto">
+            <div class="modal__controls">
+                <button class="modal__btn modal__btn--prev" onclick="prevImage()">❮</button>
+                <button class="modal__btn modal__btn--next" onclick="nextImage()">❯</button>
+            </div>
+            <div class="modal__dots" id="modalDots"></div>
+        </div>
+        <div class="modal__info">
+            <h3 id="modalTitle"></h3>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
