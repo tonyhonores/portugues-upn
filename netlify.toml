@@ -1,0 +1,8 @@
+[build]
+  command = "npm run public" # Cambia esto si tu comando es diferente
+  publish = "public"         # Cambia esto si tu directorio es 'dist' o 'public'
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
